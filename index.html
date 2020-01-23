@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Bordado Ponto Cruz | Davi Magalhães</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/main-v1.0.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index2.html" class="navbar-brand"><b>Bordado</b>PC</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+    <div class="container">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Bordado Ponto Cruz
+          <small>v1.0</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-user"></i> Davi Magalhães</a></li>
+          <li class="active">Referência para Bordado Ponto Cruz</li>
+        </ol>
+      </section>
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="row">
+
+          <div class="col-md-3">
+            <div class="box box-default box-solid">
+              <div class="box-header with-border">
+                <i class="fa fa-picture-o"></i>
+                <h3 class="box-title">Instruções</h3>
+              </div>
+              <div class="box-body">
+                <p>
+                  Gerador de referências para pontos cruzados de Bordado Ponto Cruz a partir de imagem.
+                </p>
+                <p>
+                  Leia as dicas na caixa abaixo, selecione uma imagem no botão <i class="fa fa-upload"></i>,
+                  posicione-na no enquadramento que deseja bordar e gere a referência no botão
+                  <i class="fa fa-check"></i>.
+                </p>
+              </div>
+            </div>
+
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <i class="fa fa-lightbulb-o"></i>
+                <h3 class="box-title">Dicas</h3>
+              </div>
+              <div class="box-body">
+                <p>
+                  Busque por imagens sem sombreamento ou com pouco, e com as menores dimensões possível. Pesquise no
+                  <a href="https://google.com/" target="_blank">Google</a> por ícones referentes a arte que deseja e/ou
+                  com as palavras-chave <i>&quot;pixel art&quot;</i> ou <i>&quot;asset&quot;</i>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-9">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <h3 class="box-title">Imagem</h3>
+              </div>
+              <div class="box-body">
+
+                <div class="img-container">
+                  <img id="image" src="images/mario.png">
+                </div>
+                <div class="btn-group">
+                  <label class="btn btn-warning" for="inputImage">
+                    <input type="file" class="sr-only" id="inputImage" name="file" accept=".jpg,.jpeg,.png,.gif,.bmp,.tiff">
+                    <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="Upload da imagem">
+                      <span class="fa fa-upload"></span>
+                    </span>
+                  </label>
+                  <button id="btnResetar" type="button" class="btn btn-warning" title="Reiniciar imagem"><i class="fa fa-refresh"></i></button>
+                </div>
+                <div class="btn-group">
+                  <button id="btnMover" type="button" class="btn btn-primary" title="Reposicionar"><i class="fa fa-arrows"></i></button>
+                  <button id="btnCortar" type="button" class="btn btn-primary" title="Cortar"><i class="fa fa-crop"></i></button>
+                </div>
+                <div class="btn-group">
+                  <button id="btnME" type="button" class="btn btn-primary" title="Para esquerda"><i class="fa fa-arrow-left"></i></button>
+                  <button id="btnMD" type="button" class="btn btn-primary" title="Para direita"><i class="fa fa-arrow-right"></i></button>
+                  <button id="btnMC" type="button" class="btn btn-primary" title="Para cima"><i class="fa fa-arrow-up"></i></button>
+                  <button id="btnMB" type="button" class="btn btn-primary" title="Para baixo"><i class="fa fa-arrow-down"></i></button>
+                </div>
+                <div class="btn-group">
+                  <button id="btnRE" type="button" class="btn btn-primary" title="Girar à esquerda"><i class="fa fa-undo"></i></button>
+                  <button id="btnRD" type="button" class="btn btn-primary" title="Girar à direita"><i class="fa fa-repeat"></i></button>
+                </div>
+                <div class="btn-group">
+                  <button id="btnIH" type="button" class="btn btn-primary" title="Espelhar horizontalmente"><i class="fa fa-arrows-h"></i></button>
+                  <button id="btnIV" type="button" class="btn btn-primary" title="Espelhar verticalmente"><i class="fa fa-arrows-v"></i></button>
+                </div>
+                <div class="btn-group">
+                  <button id="btnTravar" type="button" class="btn btn-primary" title="Travar edição"><i class="fa fa-lock"></i></button>
+                  <button id="btnDestr" type="button" class="btn btn-primary" title="Destravar edição"><i class="fa fa-unlock"></i></button>
+                </div>
+                <div class="btn-group">
+                  <button id="btnLimpar" type="button" class="btn btn-primary" title="Resetar"><i class="fa fa-times"></i></button>
+                  <button id="btnGerar" type="button" class="btn btn-success" title="Gerar referência"><i class="fa fa-check"></i></button>
+                </div>
+                <div class="btn-group" id="btnDownShow" style="display: none;">
+                  <a id="btnDown" class="btn btn-danger" title="Baixar referência"><i class="fa fa-download"></i></a>
+                </div>
+
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+            <div id="boxReferencia" class="box box-default box-solid" style="display: none">
+              <div class="box-header with-border">
+                <h3 class="box-title">Referência</h3>
+              </div>
+              <div class="box-body">
+                <div id="resultado"></div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+          </div>
+
+        </div>
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="pull-right hidden-xs">
+        <b>Versão</b> 1.0
+      </div>
+      <strong>Copyright &copy; 2019 <a href="#">Davi Magalhães</a>.</strong>
+      Template por <a href="https://adminlte.io">AdminLTE</a>. Todos os direitos reservados.
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 3 -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- Scripts -->
+<script src="https://unpkg.com/cropperjs/dist/cropper.js" crossorigin="anonymous"></script>
+<script src="js/jquery-cropper.min.js"></script>
+<script src="js/main-v1.0.js"></script>
+</body>
+</html>
