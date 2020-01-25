@@ -190,9 +190,9 @@ $(function () {
 
                 let indexColor = colorList.indexOf(color)   // Listar cores para legenda.
                 if(indexColor == -1) {
-                    indexColor = 0
                     colorList.push(color)
                     colorQuant.push(1)
+                    indexColor = colorList.length - 1
                 } else {
                     colorQuant[indexColor]++
                 }
