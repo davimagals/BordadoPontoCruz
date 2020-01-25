@@ -61,16 +61,40 @@
   margin: 0 .25rem .5rem 0;
 }
 
-/* Tabela de Referência (Resultado) */
-#ref {
+/* Resultado */
+#tabLeg td, #tabLeg th, #ref td {
+  margin: 0;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+}
+#tabLeg tr:nth-child(odd) {
+  background-color: #f7f7f7;
+}
+#tabLeg div {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #111;
+  text-align: center;
+  margin: 5px auto;
+}
+
+#result {
+  margin-bottom: 1rem;
+}
+#ref {  /* Tabela de Referências */
   border-collapse: collapse;
   line-height: 0;
   letter-spacing: -1em;
 }
-#ref td{
-  margin: 0;
+.refQuad td { /* Visão Quadrados */
+  border: 1px solid #111;
+}
+.refCruz td { /* Visão Pontos Cruzados */
   padding: 0;
-  font-weight: bold;
   background-image: url("../images/bg.png");
   background-size: 100% 100%;
+}
+.refCruz span {
+  display: none;
 }

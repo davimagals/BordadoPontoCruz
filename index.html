@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="dist/css/skins/skin-yellow.min.css">
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/main-v1.1.css">
+  <link rel="stylesheet" href="css/main-v1.2.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,14 +32,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<body class="hold-transition skin-blue layout-top-nav">
+<body class="hold-transition skin-yellow layout-top-nav">
 <div class="wrapper">
 
   <header class="main-header">
     <nav class="navbar navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a href="index2.html" class="navbar-brand"><b>Bordado</b>PC</a>
+          <a href="index2.html" class="navbar-brand"><b>Bordado</b>X</a>
         </div>
       </div>
       <!-- /.container-fluid -->
@@ -56,7 +56,7 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="http://davimagalhaes.com.br/"><i class="fa fa-user"></i> Davi Magalhães</a></li>
-          <li class="active">Referência para Bordado Ponto Cruz</li>
+          <li class="active">Referências para Bordado Ponto Cruz</li>
         </ol>
       </section>
 
@@ -76,7 +76,7 @@
                 </p>
                 <p>
                   Leia as dicas na caixa abaixo, selecione uma imagem no botão <i class="fa fa-upload"></i>,
-                  posicione-na no enquadramento que deseja bordar e gere a referência no botão
+                  posicione-na no enquadramento que deseja bordar e gere as referências no botão
                   <i class="fa fa-check"></i>.
                 </p>
               </div>
@@ -150,13 +150,39 @@
               <!-- /.box-body -->
             </div>
             <!-- /.box -->
+          </div>
 
-            <div id="boxReferencia" class="box box-default box-solid" style="display: none">
+        </div>
+        <div id="resultShow" class="row" style="display: none;">
+
+          <div class="col-md-3">
+            <div class="box box-default box-solid">
+              <div class="box-header with-border">
+                <i class="fa fa-list"></i>
+                <h3 class="box-title">Legenda</h3>
+              </div>
+              <div class="box-body">
+                <table id="tabLeg" class="table table-bordered">
+                  <tr>
+                    <th>Cor</th>
+                    <th>Pontos</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-9">
+            <div id="boxRef" class="box box-default box-solid">
               <div class="box-header with-border">
                 <h3 class="box-title">Referência</h3>
               </div>
               <div class="box-body">
-                <div id="resultado"></div>
+                <div id="result"></div>
+
+                <div class="btn-group">
+                  <button id="btnVisao" type="button" class="btn btn-warning" title="Alternar visão"><i class="fa fa-eye"></i></button>
+                </div>
               </div>
               <!-- /.box-body -->
             </div>
@@ -198,6 +224,6 @@
 <!-- Scripts -->
 <script src="https://unpkg.com/cropperjs/dist/cropper.js" crossorigin="anonymous"></script>
 <script src="js/jquery-cropper.min.js"></script>
-<script src="js/main-v1.1.js"></script>
+<script src="js/main-v1.2.js"></script>
 </body>
 </html>
