@@ -89,6 +89,7 @@
 }
 .refQuad td { /* Visão Quadrados */
   border: 1px solid #111;
+  font-size: 10px;
 }
 .refCruz td { /* Visão Pontos Cruzados */
   padding: 0;
